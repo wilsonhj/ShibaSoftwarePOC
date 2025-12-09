@@ -1,0 +1,28 @@
+# Cloudflare Pages Configuration for Shiba Software Consulting
+# This file configures the deployment to Cloudflare Pages
+
+name = "shiba-software-consulting"
+compatibility_date = "2024-12-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Pages-specific settings
+pages_build_output_dir = ".vercel/output/static"
+
+# Environment variables (set these in Cloudflare Dashboard for production)
+# [vars]
+# NODE_ENV = "production"
+
+# KV Namespaces (if needed for caching)
+# [[kv_namespaces]]
+# binding = "CACHE"
+# id = "your-kv-namespace-id"
+
+# Durable Objects (if needed)
+# [[durable_objects.bindings]]
+# name = "RATE_LIMITER"
+# class_name = "RateLimiter"
+
+# Build configuration
+[build]
+command = "npx @cloudflare/next-on-pages"
+

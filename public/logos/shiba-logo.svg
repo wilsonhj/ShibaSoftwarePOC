@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#06b6d4"/>
+      <stop offset="50%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="cyanGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#06b6d4"/>
+      <stop offset="100%" style="stop-color:#0891b2"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Hexagonal base shape representing technology/code -->
+  <path d="M24 4L42 14V34L24 44L6 34V14L24 4Z" fill="url(#cyanGradient)" opacity="0.1"/>
+  <path d="M24 4L42 14V34L24 44L6 34V14L24 4Z" stroke="url(#logoGradient)" stroke-width="1.5" fill="none"/>
+  
+  <!-- Stylized Shiba dog face - simplified geometric -->
+  <!-- Ears -->
+  <path d="M14 18L18 10L22 18" stroke="url(#logoGradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M34 18L30 10L26 18" stroke="url(#logoGradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  
+  <!-- Face outline -->
+  <path d="M14 18C14 18 12 26 16 32C18 35 22 38 24 38C26 38 30 35 32 32C36 26 34 18 34 18" stroke="url(#logoGradient)" stroke-width="2" stroke-linecap="round" fill="none"/>
+  
+  <!-- Eyes - represented as code brackets < > -->
+  <path d="M17 23L19 25L17 27" stroke="#06b6d4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M31 23L29 25L31 27" stroke="#8b5cf6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Nose - small triangle -->
+  <path d="M24 30L22 33H26L24 30Z" fill="url(#logoGradient)"/>
+  
+  <!-- Subtle circuit lines -->
+  <circle cx="10" cy="24" r="1" fill="#06b6d4" opacity="0.5"/>
+  <circle cx="38" cy="24" r="1" fill="#8b5cf6" opacity="0.5"/>
+  <line x1="10" y1="24" x2="14" y2="24" stroke="#06b6d4" stroke-width="0.5" opacity="0.5"/>
+  <line x1="34" y1="24" x2="38" y2="24" stroke="#8b5cf6" stroke-width="0.5" opacity="0.5"/>
+</svg>
+

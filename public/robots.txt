@@ -1,0 +1,11 @@
+# Robots.txt for shibasoftwareconsulting.com
+
+User-agent: *
+Allow: /
+
+# Disallow admin/api routes
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://shibasoftwareconsulting.com/sitemap.xml
+

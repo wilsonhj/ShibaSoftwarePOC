@@ -22,7 +22,6 @@ pages_build_output_dir = ".vercel/output/static"
 # name = "RATE_LIMITER"
 # class_name = "RateLimiter"
 
-# Build configuration
-[build]
-command = "npx @cloudflare/next-on-pages"
+# Build command must be configured in the Cloudflare Pages dashboard; Pages
+# wrangler.toml does not support a [build] section.
 

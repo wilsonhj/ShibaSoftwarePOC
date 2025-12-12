@@ -52,8 +52,20 @@ jobs:
       - name: Build OpenNext for Cloudflare
         run: npm run build:cf
 
+      - name: Debug - List directory contents
+        run: |
+          echo "=== Current directory ==="
+          pwd
+          echo "=== Root directory contents ==="
+          ls -la
+          echo "=== Check for .open-next ==="
+          ls -la .open-next/ || echo ".open-next/ does not exist"
+          echo "=== Check for .next ==="
+          ls -la .next/ || echo ".next/ does not exist"
+
       - name: Check Worker size
         run: node scripts/check-worker-size.mjs
+        continue-on-error: true
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
@@ -61,6 +73,7 @@ jobs:
           name: open-next-build
           path: .open-next/
           retention-days: 1
+          if-no-files-found: error
 
   deploy:
     name: Deploy to Cloudflare

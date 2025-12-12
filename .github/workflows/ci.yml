@@ -51,27 +51,24 @@ jobs:
 
       - name: Build OpenNext for Cloudflare
         run: |
+          set -x
           echo "=== Node and npm versions ==="
           node --version
           npm --version
+          echo "=== Which opennextjs-cloudflare ==="
+          npx which opennextjs-cloudflare || echo "CLI not found via which"
+          echo "=== NPX opennextjs-cloudflare location ==="
+          ls -la node_modules/.bin/ | grep -i open || echo "No open* binaries found"
           echo "=== Starting OpenNext build ==="
-          npm run build:cf 2>&1 | tee build.log
-          echo "=== Build exit code: $? ==="
-
-      - name: Debug - List directory contents
-        run: |
-          echo "=== Current directory ==="
-          pwd
-          echo "=== Root directory contents ==="
+          npx opennextjs-cloudflare build
+          BUILD_EXIT_CODE=$?
+          echo "=== Build exit code: $BUILD_EXIT_CODE ==="
+          echo "=== Directory contents after build ==="
           ls -la
-          echo "=== Check for .open-next ==="
-          if [ -d ".open-next" ]; then
-            ls -la .open-next/
-            echo "=== .open-next exists with $(find .open-next -type f | wc -l) files ==="
-          else
-            echo "ERROR: .open-next/ does not exist!"
-            echo "=== Last 50 lines of build log ==="
-            tail -50 build.log || echo "No build log found"
+          echo "=== Check .open-next ==="
+          ls -la .open-next/ || echo ".open-next not found"
+          if [ ! -d ".open-next" ]; then
+            echo "ERROR: Build completed but .open-next/ was not created!"
             exit 1
           fi
 

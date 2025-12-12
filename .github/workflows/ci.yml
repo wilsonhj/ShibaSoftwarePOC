@@ -50,7 +50,13 @@ jobs:
         run: npm ci
 
       - name: Build OpenNext for Cloudflare
-        run: npm run build:cf
+        run: |
+          echo "=== Node and npm versions ==="
+          node --version
+          npm --version
+          echo "=== Starting OpenNext build ==="
+          npm run build:cf 2>&1 | tee build.log
+          echo "=== Build exit code: $? ==="
 
       - name: Debug - List directory contents
         run: |
@@ -59,13 +65,15 @@ jobs:
           echo "=== Root directory contents ==="
           ls -la
           echo "=== Check for .open-next ==="
-          ls -la .open-next/ || echo ".open-next/ does not exist"
-          echo "=== Check for .next ==="
-          ls -la .next/ || echo ".next/ does not exist"
-
-      - name: Check Worker size
-        run: node scripts/check-worker-size.mjs
-        continue-on-error: true
+          if [ -d ".open-next" ]; then
+            ls -la .open-next/
+            echo "=== .open-next exists with $(find .open-next -type f | wc -l) files ==="
+          else
+            echo "ERROR: .open-next/ does not exist!"
+            echo "=== Last 50 lines of build log ==="
+            tail -50 build.log || echo "No build log found"
+            exit 1
+          fi
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4

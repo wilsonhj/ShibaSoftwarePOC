@@ -5,11 +5,11 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
-    "build:cf": "npx @cloudflare/next-on-pages",
+    "build:cf": "opennextjs-cloudflare build",
     "start": "next start",
     "lint": "next lint",
-    "preview": "npx wrangler pages dev .vercel/output/static",
-    "deploy": "npx wrangler pages deploy .vercel/output/static"
+    "preview": "npm run build:cf && opennextjs-cloudflare preview",
+    "deploy": "npm run build:cf && opennextjs-cloudflare deploy"
   },
   "dependencies": {
     "autoprefixer": "^10.4.21",
@@ -22,7 +22,7 @@
     "clsx": "^2.1.1",
     "lucide-react": "^0.548.0",
     "motion": "^12.23.24",
-    "next": "^16.0.0",
+    "next": "^16.0.10",
     "next-themes": "^0.4.6",
     "postcss": "^8.4.32",
     "react": "^19.2.0",
@@ -32,12 +32,12 @@
     "zod": "^4.1.12"
   },
   "devDependencies": {
-    "@cloudflare/next-on-pages": "^1.13.7",
+    "@opennextjs/cloudflare": "^1.14.5",
     "@types/node": "^24.9.1",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
     "eslint": "^9.38.0",
-    "eslint-config-next": "^16.0.0",
+    "eslint-config-next": "^16.0.10",
     "tailwindcss": "^4.1.16",
     "typescript": "^5.9.3",
     "wrangler": "^4.19.1"

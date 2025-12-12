@@ -1,4 +1,8 @@
 import type { NextConfig } from 'next'
+import { initOpenNextCloudflareForDev } from '@opennextjs/cloudflare'
+
+// Ensures local `next dev` behaves closer to the Cloudflare Workers runtime.
+initOpenNextCloudflareForDev()
 
 const csp = [
   "default-src 'self'",
@@ -81,7 +85,7 @@ const nextConfig: NextConfig = {
   },
   
   // Enable static export for Cloudflare Pages
-  // Note: If you need API routes, use @cloudflare/next-on-pages instead
+  // Note: This project deploys to Cloudflare Workers via OpenNext (not static export).
   // output: 'export',
   
   // Image optimization config for Cloudflare

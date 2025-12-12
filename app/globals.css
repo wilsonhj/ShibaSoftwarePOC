@@ -254,12 +254,15 @@
 @layer components {
   .tech-badge {
     @apply px-3 py-1.5 text-sm font-medium rounded-full;
-    @apply bg-muted/50 border border-border;
+    /* Tailwind v4 doesn't support opacity modifiers reliably inside @apply for custom tokens */
+    background-color: hsl(var(--muted) / 0.5);
+    border: 1px solid hsl(var(--border));
     @apply transition-all duration-200;
   }
   
   .tech-badge:hover {
-    @apply border-primary/50 bg-primary/5;
+    border-color: hsl(var(--primary) / 0.5);
+    background-color: hsl(var(--primary) / 0.05);
   }
   
   .dark .tech-badge:hover {

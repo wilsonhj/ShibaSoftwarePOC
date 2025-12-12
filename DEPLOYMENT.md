@@ -1,6 +1,6 @@
 # Deployment Guide for Shiba Software Consulting
 
-This guide explains how to deploy the website to Cloudflare Pages with the `shibasoftwareconsulting.com` domain.
+This guide explains how to deploy the website to Cloudflare using **OpenNext** (Cloudflare Workers) with the `shibasoftwareconsulting.com` domain.
 
 ## Prerequisites
 
@@ -11,30 +11,31 @@ This guide explains how to deploy the website to Cloudflare Pages with the `shib
 
 ## Deployment Steps
 
-### 1. Connect GitHub Repository to Cloudflare Pages
+### 1. Set up a Cloudflare Workers deployment (OpenNext)
 
-1. Log in to [Cloudflare Dashboard](https://dash.cloudflare.com)
-2. Go to **Workers & Pages** > **Create application** > **Pages**
-3. Select **Connect to Git**
-4. Authorize Cloudflare to access your GitHub account
-5. Select the repository containing this project
+You can deploy either:
 
-### 2. Configure Build Settings
+- **From your local machine (recommended to start)** using `npm run deploy`
+- **From CI** (GitHub Actions) running the same commands with a Cloudflare API token
 
-In the Cloudflare Pages setup:
+### 2. Build & Deploy commands
 
-| Setting | Value |
-|---------|-------|
-| **Project name** | `shiba-software-consulting` |
-| **Production branch** | `main` |
-| **Framework preset** | `Next.js` |
-| **Build command** | `npx @cloudflare/next-on-pages` |
-| **Build output directory** | `.vercel/output/static` |
-| **Root directory** | `/` (or path to ShibaSoftwarePOC if in monorepo) |
+From the repo root:
+
+```bash
+# Install dependencies
+npm install
+
+# Build OpenNext output into .open-next/
+npm run build:cf
+
+# Deploy to Cloudflare Workers
+npm run deploy
+```
 
 ### 3. Set Environment Variables
 
-In Cloudflare Pages > Settings > Environment Variables, add:
+Add these as **Worker secrets** (recommended) or environment variables in your CI:
 
 #### Production Environment Variables
 
@@ -90,7 +91,7 @@ Proxied: Yes
 
 1. Go to **API Keys** in Resend dashboard
 2. Create a new API key
-3. Add it to Cloudflare Pages environment variables as `RESEND_API_KEY`
+3. Add it as a Worker secret named `RESEND_API_KEY`
 
 ### 3. DNS Records for Email
 
@@ -123,36 +124,15 @@ Value: v=DMARC1; p=quarantine; rua=mailto:dmarc@shibasoftwareconsulting.com
 
 ### 2. Add Environment Variables
 
-Add to Cloudflare Pages:
+Add as Worker secrets:
 - `UPSTASH_REDIS_REST_URL`
 - `UPSTASH_REDIS_REST_TOKEN`
 
-## Deployment Commands
-
-### Manual Deployment
+## Preview (local)
 
 ```bash
-# Install dependencies
-npm install
-
-# Build for Cloudflare Pages
-npx @cloudflare/next-on-pages
-
-# Preview locally (optional)
-npx wrangler pages dev .vercel/output/static
+npm run preview
 ```
-
-### Automatic Deployment
-
-Pushes to the `main` branch will automatically trigger deployments.
-
-## Preview Deployments
-
-Cloudflare Pages automatically creates preview deployments for:
-- Pull requests
-- Non-production branches
-
-Preview URLs follow the pattern: `<branch-name>.<project-name>.pages.dev`
 
 ## Monitoring and Analytics
 

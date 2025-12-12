@@ -85,7 +85,9 @@ export function ContactForm() {
           </Label>
           <Input
             id="name"
-            {...register("name")}
+            {...register("name", {
+              setValueAs: (v) => (typeof v === "string" ? v.trim() : v),
+            })}
             placeholder="John Doe"
             className={`bg-background ${errors.name ? "border-destructive focus-visible:ring-destructive" : ""}`}
           />
@@ -104,7 +106,10 @@ export function ContactForm() {
           <Input
             id="email"
             type="email"
-            {...register("email")}
+            {...register("email", {
+              setValueAs: (v) =>
+                typeof v === "string" ? v.trim().toLowerCase() : v,
+            })}
             placeholder="john@example.com"
             className={`bg-background ${errors.email ? "border-destructive focus-visible:ring-destructive" : ""}`}
           />
@@ -123,7 +128,13 @@ export function ContactForm() {
         </Label>
         <Input
           id="company"
-          {...register("company")}
+          {...register("company", {
+            setValueAs: (v) => {
+              if (typeof v !== "string") return v
+              const trimmed = v.trim()
+              return trimmed.length ? trimmed : undefined
+            },
+          })}
           placeholder="Acme Inc."
           className="bg-background"
         />
@@ -164,7 +175,9 @@ export function ContactForm() {
           </Label>
           <select
             id="budget"
-            {...register("budget")}
+            {...register("budget", {
+              setValueAs: (v) => (v === "" ? undefined : v),
+            })}
             className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
           >
             <option value="">Select budget range</option>

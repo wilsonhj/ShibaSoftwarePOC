@@ -1,7 +1,6 @@
 import { z } from 'zod'
 
 // Regex patterns for input validation
-const SAFE_TEXT_PATTERN = /^[\p{L}\p{N}\s\-'.,!?@#$%&*()\[\]{}:;"'+=/\\]+$/u
 const NAME_PATTERN = /^[\p{L}\s\-'.]+$/u
 
 // Budget options whitelist

@@ -7,7 +7,7 @@
     "build": "next build",
     "build:cf": "opennextjs-cloudflare build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint . --max-warnings 0",
     "preview": "npm run build:cf && opennextjs-cloudflare preview",
     "deploy": "npm run build:cf && opennextjs-cloudflare deploy",
     "analyze": "ANALYZE=true next build",

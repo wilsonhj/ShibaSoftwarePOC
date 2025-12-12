@@ -190,9 +190,6 @@ function ContactInfo({ icon, title, content, href }: {
   content: React.ReactNode
   href?: string
 }) {
-  const ContentWrapper = href ? Link : 'div'
-  const wrapperProps = href ? { href, className: "hover:text-primary transition-colors" } : {}
-  
   return (
     <div className="flex items-start gap-4">
       <div className="p-2 rounded-lg bg-primary/10 text-primary flex-shrink-0">

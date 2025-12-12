@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { Cloud, Boxes, Brain, Check, ArrowRight, Server, Workflow, Database, Cpu, GitBranch, Layers } from "lucide-react"
+import { Cloud, Boxes, Brain, Check, ArrowRight, Server, Workflow, Database } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { motion } from "motion/react"
 

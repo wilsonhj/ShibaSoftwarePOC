@@ -29,7 +29,7 @@ export function Header() {
           <Link href="/" className="-m-1.5 p-1.5 flex items-center gap-3 group">
             <div className="relative w-10 h-10 transition-transform group-hover:scale-105">
               <Image
-                src="/logos/shiba-logo.svg"
+                src="/logos/shiba-logo.png"
                 alt="Shiba Software Logo"
                 fill
                 className="object-contain"

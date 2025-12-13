@@ -17,7 +17,7 @@ export function Footer() {
             <Link href="/" className="flex items-center gap-3 mb-4">
               <div className="relative w-8 h-8">
                 <Image
-                  src="/logos/shiba-logo.svg"
+                  src="/logos/shiba-logo.png"
                   alt="Shiba Software Logo"
                   fill
                   className="object-contain"

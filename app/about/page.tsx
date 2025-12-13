@@ -199,7 +199,7 @@ export default function AboutPage() {
                   </Link>
                 </Button>
                 <Button variant="outline" size="icon" asChild className="hover:border-primary/50 hover:bg-primary/5">
-                  <Link href="mailto:contact@shibasoftwareconsulting.com" aria-label="Email">
+                  <Link href="mailto:mail@shibasoftwareconsulting.com" aria-label="Email">
                     <Mail className="h-5 w-5" />
                   </Link>
                 </Button>

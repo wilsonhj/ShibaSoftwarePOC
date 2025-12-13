@@ -222,7 +222,7 @@ async function sendEmail(data: {
   const serviceLabel = serviceLabels[data.service] || 'General Inquiry'
   const budgetLabel = data.budget ? (budgetLabels[data.budget] || 'Not specified') : undefined
 
-  const notificationEmail = process.env.NOTIFICATION_EMAIL || 'contact@shibasoftwareconsulting.com'
+  const notificationEmail = process.env.NOTIFICATION_EMAIL || 'mail@shibasoftwareconsulting.com'
 
   try {
     // Send notification email to business

@@ -53,8 +53,8 @@ export default function ContactPage() {
                   <ContactInfo
                     icon={<Mail className="h-5 w-5" />}
                     title="Email"
-                    content="contact@shibasoftwareconsulting.com"
-                    href="mailto:contact@shibasoftwareconsulting.com"
+                    content="mail@shibasoftwareconsulting.com"
+                    href="mailto:mail@shibasoftwareconsulting.com"
                   />
                   
                   <ContactInfo
@@ -112,7 +112,7 @@ export default function ContactPage() {
                   You can also reach us directly via email for a quicker response.
                 </p>
                 <Button asChild variant="outline" className="w-full">
-                  <Link href="mailto:contact@shibasoftwareconsulting.com">
+                  <Link href="mailto:mail@shibasoftwareconsulting.com">
                     <Mail className="mr-2 h-4 w-4" />
                     Send Email Directly
                   </Link>

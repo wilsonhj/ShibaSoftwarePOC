@@ -51,7 +51,7 @@ export function Footer() {
                 <Linkedin className="h-5 w-5" />
               </Link>
               <Link
-                href="mailto:contact@shibasoftwareconsulting.com"
+                href="mailto:mail@shibasoftwareconsulting.com"
                 className="p-2 rounded-lg text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all"
                 aria-label="Email"
               >

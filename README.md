@@ -48,6 +48,7 @@ A modern, responsive website for Shiba Software Consulting - a California-based 
 ## Security Features
 
 ### API Security
+
 - Rate Limiting: 5 requests per minute per IP on contact form
 - Input Validation: Zod schema validation on all form inputs
 - CORS Protection: Whitelist of allowed origins
@@ -56,6 +57,7 @@ A modern, responsive website for Shiba Software Consulting - a California-based 
 - No PII Logging: Sensitive user data never logged to console
 
 ### HTTP Security Headers
+
 - X-Frame-Options: DENY (prevents clickjacking)
 - X-Content-Type-Options: nosniff (prevents MIME sniffing)
 - Content-Security-Policy: Strict CSP to prevent XSS attacks
@@ -137,7 +139,7 @@ Create a `.env.local` file with the following variables:
 ```env
 # Email Service (Resend)
 RESEND_API_KEY=re_xxxxxxxxxxxx
-NOTIFICATION_EMAIL=contact@shibasoftwareconsulting.com
+NOTIFICATION_EMAIL=mail@shibasoftwareconsulting.com
 
 # Rate Limiting (Upstash Redis) - Optional
 UPSTASH_REDIS_REST_URL=https://xxxx.upstash.io
@@ -155,6 +157,7 @@ GOOGLE_SITE_VERIFICATION=
 This site is configured for deployment on **Cloudflare Pages** with the custom domain `shibasoftwareconsulting.com`.
 
 See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed deployment instructions including:
+
 - Cloudflare Pages setup
 - DNS configuration
 - Environment variables
@@ -163,13 +166,13 @@ See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed deployment instructions includin
 
 ### Free Tier Services Used
 
-| Service | Free Tier |
-|---------|-----------|
+| Service          | Free Tier                         |
+| ---------------- | --------------------------------- |
 | Cloudflare Pages | Unlimited sites, 500 builds/month |
-| Cloudflare DNS | Free with domain |
-| Cloudflare SSL | Free automatic SSL |
-| Resend | 3,000 emails/month |
-| Upstash Redis | 10,000 requests/day |
+| Cloudflare DNS   | Free with domain                  |
+| Cloudflare SSL   | Free automatic SSL                |
+| Resend           | 3,000 emails/month                |
+| Upstash Redis    | 10,000 requests/day               |
 
 ## Customization
 
@@ -179,15 +182,16 @@ Edit `app/globals.css` to customize the color palette:
 
 ```css
 @theme {
-  --color-primary: #06b6d4;   /* Cyan */
+  --color-primary: #06b6d4; /* Cyan */
   --color-secondary: #8b5cf6; /* Violet */
-  --color-accent: #f59e0b;    /* Amber */
+  --color-accent: #f59e0b; /* Amber */
 }
 ```
 
 ### Typography
 
 The site uses:
+
 - **Outfit** for headings
 - **Inter** for body text
 - **JetBrains Mono** for code

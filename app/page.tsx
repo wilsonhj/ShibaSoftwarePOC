@@ -238,7 +238,7 @@ export default function HomePage() {
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="w-full sm:w-auto text-base px-8">
-                <Link href="mailto:contact@shibasoftwareconsulting.com">
+                <Link href="mailto:mail@shibasoftwareconsulting.com">
                   Or Email Directly
                 </Link>
               </Button>

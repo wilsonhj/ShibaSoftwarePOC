@@ -125,8 +125,8 @@ export default function PrivacyPolicyPage() {
             </ul>
             <p className="text-muted-foreground leading-relaxed">
               To exercise any of these rights, please contact us at{" "}
-              <a href="mailto:contact@shibasoftwareconsulting.com" className="text-primary hover:underline">
-                contact@shibasoftwareconsulting.com
+              <a href="mailto:mail@shibasoftwareconsulting.com" className="text-primary hover:underline">
+                mail@shibasoftwareconsulting.com
               </a>.
             </p>
           </section>
@@ -176,8 +176,8 @@ export default function PrivacyPolicyPage() {
               <p className="font-heading font-semibold mb-2">Shiba Software Consulting LLC</p>
               <p className="text-muted-foreground">
                 Email:{" "}
-                <a href="mailto:contact@shibasoftwareconsulting.com" className="text-primary hover:underline">
-                  contact@shibasoftwareconsulting.com
+                <a href="mailto:mail@shibasoftwareconsulting.com" className="text-primary hover:underline">
+                  mail@shibasoftwareconsulting.com
                 </a>
               </p>
               <p className="text-muted-foreground">

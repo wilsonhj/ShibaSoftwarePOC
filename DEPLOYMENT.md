@@ -39,14 +39,14 @@ Add these as **Worker secrets** (recommended) or environment variables in your C
 
 #### Production Environment Variables
 
-| Variable | Description | Required |
-|----------|-------------|----------|
-| `NODE_ENV` | Set to `production` | Yes |
-| `RESEND_API_KEY` | API key from [Resend](https://resend.com) | Yes (for email) |
-| `NOTIFICATION_EMAIL` | Email to receive contact form submissions | Yes |
-| `UPSTASH_REDIS_REST_URL` | Upstash Redis URL | Optional |
-| `UPSTASH_REDIS_REST_TOKEN` | Upstash Redis token | Optional |
-| `ALLOWED_ORIGINS` | `https://shibasoftwareconsulting.com,https://www.shibasoftwareconsulting.com` | Optional |
+| Variable                   | Description                                                                   | Required        |
+| -------------------------- | ----------------------------------------------------------------------------- | --------------- |
+| `NODE_ENV`                 | Set to `production`                                                           | Yes             |
+| `RESEND_API_KEY`           | API key from [Resend](https://resend.com)                                     | Yes (for email) |
+| `NOTIFICATION_EMAIL`       | Email to receive contact form submissions                                     | Yes             |
+| `UPSTASH_REDIS_REST_URL`   | Upstash Redis URL                                                             | Optional        |
+| `UPSTASH_REDIS_REST_TOKEN` | Upstash Redis token                                                           | Optional        |
+| `ALLOWED_ORIGINS`          | `https://shibasoftwareconsulting.com,https://www.shibasoftwareconsulting.com` | Optional        |
 
 ### 4. Configure Custom Domain
 
@@ -125,6 +125,7 @@ Value: v=DMARC1; p=quarantine; rua=mailto:dmarc@shibasoftwareconsulting.com
 ### 2. Add Environment Variables
 
 Add as Worker secrets:
+
 - `UPSTASH_REDIS_REST_URL`
 - `UPSTASH_REDIS_REST_TOKEN`
 
@@ -144,6 +145,7 @@ npm run preview
 ### Web Analytics (Optional)
 
 Enable Cloudflare Web Analytics for free:
+
 1. Go to **Analytics & Logs** > **Web Analytics**
 2. Add the site
 3. No code changes needed (automatic with Cloudflare Pages)
@@ -170,17 +172,17 @@ Enable Cloudflare Web Analytics for free:
 
 ## Cost Summary (Free Tier)
 
-| Service | Free Tier |
-|---------|-----------|
+| Service              | Free Tier                         |
+| -------------------- | --------------------------------- |
 | **Cloudflare Pages** | Unlimited sites, 500 builds/month |
-| **Cloudflare DNS** | Free with domain |
-| **Cloudflare SSL** | Free automatic SSL |
-| **Resend** | 3,000 emails/month |
-| **Upstash Redis** | 10,000 requests/day |
+| **Cloudflare DNS**   | Free with domain                  |
+| **Cloudflare SSL**   | Free automatic SSL                |
+| **Resend**           | 3,000 emails/month                |
+| **Upstash Redis**    | 10,000 requests/day               |
 
 ## Support
 
 For issues with this deployment:
-- Create an issue in the GitHub repository
-- Contact: contact@shibasoftwareconsulting.com
 
+- Create an issue in the GitHub repository
+- Contact: mail@shibasoftwareconsulting.com

@@ -23,7 +23,7 @@ export function OrganizationStructuredData() {
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer service",
-      email: "contact@shibasoftwareconsulting.com",
+      email: "mail@shibasoftwareconsulting.com",
       availableLanguage: ["English"]
     },
     sameAs: [
@@ -133,7 +133,7 @@ export function LocalBusinessStructuredData() {
     image: "https://shibasoftwareconsulting.com/logos/shiba-logo.svg",
     "@id": "https://shibasoftwareconsulting.com",
     url: "https://shibasoftwareconsulting.com",
-    email: "contact@shibasoftwareconsulting.com",
+    email: "mail@shibasoftwareconsulting.com",
     address: {
       "@type": "PostalAddress",
       addressRegion: "California",

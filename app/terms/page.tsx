@@ -243,8 +243,8 @@ export default function TermsOfServicePage() {
               <p className="font-heading font-semibold mb-2">Shiba Software Consulting LLC</p>
               <p className="text-muted-foreground">
                 Email:{" "}
-                <a href="mailto:contact@shibasoftwareconsulting.com" className="text-primary hover:underline">
-                  contact@shibasoftwareconsulting.com
+                <a href="mailto:mail@shibasoftwareconsulting.com" className="text-primary hover:underline">
+                  mail@shibasoftwareconsulting.com
                 </a>
               </p>
               <p className="text-muted-foreground">

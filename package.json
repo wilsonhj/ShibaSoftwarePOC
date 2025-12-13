@@ -12,7 +12,7 @@
     "deploy": "npm run build:cf && opennextjs-cloudflare deploy",
     "analyze": "ANALYZE=true next build",
     "size-check": "npm run build:cf && node scripts/check-worker-size.mjs",
-    "prepare": "husky"
+    "prepare": "husky || true"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",

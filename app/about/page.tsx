@@ -1,7 +1,6 @@
 "use client"
 
 import Link from "next/link"
-import Image from "next/image"
 import { Target, Users, Lightbulb, ArrowRight, Github, Linkedin, Mail, Globe, Code, Zap, Shield, Heart } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { motion } from "motion/react"
@@ -178,16 +177,9 @@ export default function AboutPage() {
             transition={{ duration: 0.5 }}
           >
             <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
-              <div className="relative w-64 h-64 rounded-2xl bg-gradient-to-br from-primary via-secondary to-accent p-[3px] mb-6 overflow-hidden">
-                <div className="relative w-full h-full rounded-2xl overflow-hidden">
-                  <Image
-                    src="/images/founder.jpg"
-                    alt="H.J. - Founder & Principal Engineer"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 256px, 256px"
-                    priority
-                  />
+              <div className="relative w-48 h-48 rounded-2xl bg-gradient-to-br from-primary via-secondary to-accent p-[2px] mb-6">
+                <div className="w-full h-full rounded-2xl bg-card flex items-center justify-center">
+                  <span className="text-6xl font-heading font-bold bg-gradient-to-br from-primary to-secondary bg-clip-text text-transparent">H.J.</span>
                 </div>
               </div>
               <h3 className="text-2xl font-heading font-bold mb-2">H.J.</h3>

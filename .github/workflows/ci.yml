@@ -50,27 +50,7 @@ jobs:
         run: npm ci
 
       - name: Build OpenNext for Cloudflare
-        run: |
-          set -x
-          echo "=== Node and npm versions ==="
-          node --version
-          npm --version
-          echo "=== Which opennextjs-cloudflare ==="
-          npx which opennextjs-cloudflare || echo "CLI not found via which"
-          echo "=== NPX opennextjs-cloudflare location ==="
-          ls -la node_modules/.bin/ | grep -i open || echo "No open* binaries found"
-          echo "=== Starting OpenNext build ==="
-          npx opennextjs-cloudflare build
-          BUILD_EXIT_CODE=$?
-          echo "=== Build exit code: $BUILD_EXIT_CODE ==="
-          echo "=== Directory contents after build ==="
-          ls -la
-          echo "=== Check .open-next ==="
-          ls -la .open-next/ || echo ".open-next not found"
-          if [ ! -d ".open-next" ]; then
-            echo "ERROR: Build completed but .open-next/ was not created!"
-            exit 1
-          fi
+        run: npm run build:cf
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4

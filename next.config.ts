@@ -210,23 +210,7 @@ const nextConfig: NextConfig = {
     ]
   },
   
-  // Redirects
-  async redirects() {
-    return [
-      // Redirect www to non-www
-      {
-        source: '/:path*',
-        has: [
-          {
-            type: 'host',
-            value: 'www.shibasoftwareconsulting.com',
-          },
-        ],
-        destination: 'https://shibasoftwareconsulting.com/:path*',
-        permanent: true,
-      },
-    ]
-  },
+  // Redirects are handled in `middleware.ts` to ensure correct behavior on Workers/OpenNext.
   
   // Body size limit for API routes
   experimental: {
